@@ -9,7 +9,7 @@ Bu beceri bir avukatın dilekçe yazım alışkanlıklarını toplar. Kendi tarz
 
 ## İşe başlamadan
 
-- **Avukat bilgileri** (antet, vekil adı, imza) bu klasördeki `profil.md` dosyasındadır. Dosya yoksa ya da içinde `[doldurun]` kalmışsa bilgileri kullanıcıya sor. Adres, telefon ya da baro bilgisi uydurma.
+- **Avukat bilgileri** (antet, vekil adı, imza) bu klasördeki `profil.md` dosyasındadır. Dosya yoksa ya da ilgili satırda `[doldurun: ...]` yer tutucusu kalmışsa bilgiyi kullanıcıya sor. Adres, telefon ya da baro bilgisi uydurma.
 - **UDF çıktısı:** Dilekçe UYAP Doküman Editörü dosyası (.udf) ya da PDF olarak üretilecekse `uyap-udf-sablonu` becerisini de uygula.
 - **Emsal karar ve mevzuat:** Esasa ilişkin her dilekçede, kullanıcının istemesini beklemeden emsal karar ve mevzuat kullanılır. Araştırma için `ictihat-arastirmasi` becerisini uygula. Yargı MCP ve Mevzuat MCP kurulu değilse karar alıntısı yapma; bunu kullanıcıya bildir ve dilekçeyi alıntısız yaz.
 - **Gizlilik:** Web aramasına ve karar arama sorgularına müvekkil adı, dosya numarası ya da kişileri ve olayı tanıtacak ayrıntı yazılmaz. Yalnızca hukuki terimler aranır.

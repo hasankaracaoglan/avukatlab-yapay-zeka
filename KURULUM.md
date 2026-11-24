@@ -19,7 +19,7 @@ Hepsini tek mesajda sor:
    - Adınız ve soyadınız (dilekçede "Av. Ad SOYAD" biçiminde yazılır)?
    - Büro adresiniz?
    - Antette hangi telefon yazsın?
-   - Antete e-posta, KEP adresi ya da baro sicil numarası eklensin mi? Hangileri?
+   - Antete e-posta, KEP adresi ya da baro sicil numarası eklensin mi? Eklenecekse adresini ya da numarasını da yazın.
    - Büroda sizin adınıza dilekçe yazacak başka avukat var mı? Varsa onun bilgileri.
    - Nöbetçi mahkeme başlıklarında hangi şehir yazsın?
 4. **Dilekçe yazarken bu beceriler her zaman kullanılsın mı?** Asistan beceriyi işe göre kendisi seçer, ama bazen kaçırabilir. Evet denirse 8. adımdaki tek paragraf kural dosyasına eklenir.
@@ -33,10 +33,13 @@ Hepsini tek mesajda sor:
   - Belge: https://antigravity.google/docs/skills
   - Klasör yoksa kurulumda oluştur.
 - **Claude Desktop:** ayar dosyası macOS'ta `~/Library/Application Support/Claude/claude_desktop_config.json`, Windows'ta `%APPDATA%\Claude\claude_desktop_config.json`.
-- **Uyap Doküman Editörü:** PDF dönüştürme için gerekir. Mac'te `/Applications` altında adında "Uyap" ve "Doküman" geçen bir uygulama var mı, bak; sonucu plana yaz. UDF üretmek için gerekmez.
+- **Uyap Doküman Editörü:** PDF dönüştürme için gerekir, UDF üretmek için gerekmez. `ls /Applications ~/Applications 2>/dev/null | grep -i uyap` ile bak ve sonucu plana yaz. Aramada Türkçe harf kullanma ("Doküman" gibi): macOS dosya adlarındaki Türkçe harfleri ayrıştırılmış biçimde saklar, Türkçe harfli arama uygulama kurulu olsa da boş döner.
 - **Var olan kurulumlar:** Her hedefte aynı adlı MCP girdisi (`yargi-mcp`, `mevzuat-mcp`, `uyap-udf-mcp`), aynı adlı beceri klasörü ve 8. adımdaki paragraf var mı, bak.
   - Claude Code için her ad için `claude mcp get <ad>` çalıştır; çıktı girdinin kapsamını da gösterir (user, project, local). `claude mcp list` kullanma, her sunucuyu çalıştırıp yavaşlar.
   - Eski Yargı MCP kullanıcılarında `uvx yargi-mcp` gibi artık çalışmayan bir girdi olabilir.
+  - `<uv> tool list` ile aynı adlı kurulu araç, `<uv> tool dir --bin` klasöründe aynı adlı dosya var mı bak. Varsa planda göster; onay alınırsa kurulumda `--force` ekle.
+  - Claude Desktop kurulacaksa masaüstünde aynı adlı zip (`dilekce-yazimi.zip` vb.) var mı bak; varsa planda "Çöp Kutusu'na taşınacak" diye göster.
+  - `claude` komutu yoksa (ör. kurulumu Antigravity'den yapıyorsan) Claude Code adımları için komutları kullanıcıya ver; Claude Code'u açtığında kendisi çalıştırsın. `~/.claude.json`'ı elle düzenleme.
 
 ## 3. Planı göster, onay al
 
@@ -47,12 +50,12 @@ Kullanıcıya tek bir plan göster:
 - uv kurulu değilse kurulacağı.
 - Var olan aynı adlı girdiler ve becerilerin değiştirilmesi için soru. Hayır denirse o parçayı atla ve sonunda bildir.
 - Mevzuat MCP'nin bazı araçları (mevzuat.gov.tr sorguları) Chromium ister: yaklaşık 480 MB, 3 dakika. Asıl kullanılan Bedesten araçları istemez. "Şimdi indirelim mi?" diye sor; önerin "evet" olsun. Hayır denirse o araçlar ilk kullanımda kendisi indirir, o arama uzun sürer.
-- Süre ve yer: MCP sunucularının ilk kurulumu toplam 5-10 dakika sürer (Yargı MCP yaklaşık 4 dk, Mevzuat MCP 1 dk, UYAP UDF MCP 30 sn; Chromium ayrıca 3 dk). Yaklaşık 1,5 GB yer kaplar (Chromium dahil).
-- Claude Desktop ayarı değişecekse Claude Desktop'ın kapatılması. Sen Claude Desktop'ın içinde çalışıyorsan bunu isteme; bitince yeniden başlatmasını söyle.
+- Süre ve yer: MCP sunucularının ilk kurulumu internet hızına göre 3-10 dakika sürer (en uzunu Yargı MCP; Chromium ayrıca 3 dk). Sunucular, uv'nin önbelleği ve Chromium birlikte yaklaşık 1,8 GB yer kaplar.
+- Claude Desktop ayarı değişecekse Claude Desktop'ın kapatılması. Claude Desktop açıkken ayar dosyasını kendisi yeniden yazabilir ve değişiklik kaybolabilir. Sen Claude Desktop uygulamasının içinde çalışıyorsan (içindeki Claude Code dahil) kapatmasını isteme; değişikliği yap, kullanıcıya uygulamayı kapatıp açmasını söyle ve 9. adımdaki denetimi yap.
 
-Plan onaylanınca uygula. Kullandığın uygulama komut ve dosya değişikliği için ayrıca izin soruyorsa onu ayrıca tekrar sorma.
+Plan onaylanınca uygula. Uygulamanın kendi izin pencereleri dışında kullanıcıya ayrıca onay sorma.
 
-**Yedekler:** Bütün yedekler tek bir klasöre alınır: `~/AvukatLab-yedekler/<tarih-saat>/`, örneğin `~/AvukatLab-yedekler/20261124-1408/`. Dosya adı `<uygulama>-<asıl dosya adı>` olur, örneğin `claude-desktop-claude_desktop_config.json`. Yedekleri **asla** beceri ya da kural klasörlerinin içine koyma; oradaki kopya ikinci bir beceri ya da kural olarak yüklenir.
+**Yedekler:** Bütün yedekler tek bir klasöre alınır: `~/AvukatLab-yedekler/<tarih-saat>/`, örneğin `~/AvukatLab-yedekler/20261124-1408/`. Dosya adı `<uygulama>-<asıl dosya adı>` olur; önekler `claude-code-`, `claude-desktop-` ve `antigravity-`. Örnek: `claude-desktop-claude_desktop_config.json`. Yedekleri **asla** beceri ya da kural klasörlerinin içine koyma; oradaki kopya ikinci bir beceri ya da kural olarak yüklenir.
 
 ## 4. MCP sunucuları
 
@@ -64,13 +67,15 @@ Sunucular bilgisayara **kalıcı olarak** kurulur. Açılırken internete, GitHu
 2. **Sunucuları kur.** Her biri için (`<uv>` = uv'nin tam yolu):
 
    ```bash
-   UV_HTTP_TIMEOUT=180 <uv> tool install https://github.com/hasankaracaoglan/yargi-mcp/archive/refs/heads/yerel.zip
-   UV_HTTP_TIMEOUT=180 <uv> tool install https://github.com/hasankaracaoglan/mevzuat-mcp/archive/refs/heads/yerel.zip
-   UV_HTTP_TIMEOUT=180 <uv> tool install https://github.com/hasankaracaoglan/uyap-udf-mcp/archive/refs/heads/main.zip
+   UV_HTTP_TIMEOUT=180 <uv> tool install --managed-python --python 3.12 https://github.com/hasankaracaoglan/yargi-mcp/archive/refs/heads/yerel.zip
+   UV_HTTP_TIMEOUT=180 <uv> tool install --managed-python --python 3.12 https://github.com/hasankaracaoglan/mevzuat-mcp/archive/refs/heads/yerel.zip
+   UV_HTTP_TIMEOUT=180 <uv> tool install --managed-python --python 3.12 https://github.com/hasankaracaoglan/uyap-udf-mcp/archive/refs/heads/main.zip
    ```
 
    - Yargı MCP birkaç dakika sürer: komutun zaman aşımı en az 10 dakika olsun ya da arka planda çalıştır.
    - "operation timed out" ile yarıda kalırsa aynı komutu bir kez daha çalıştır; inen paketler önbellekte kalır.
+   - `--managed-python --python 3.12`, sunucuların uv'nin kendi Python'unu kullanmasını sağlar. Böylece Homebrew gibi başka bir Python'un güncellenmesi ya da kaldırılması sunucuları bozmaz.
+   - uv "... is not on your PATH" diye uyarır. Bu uyarıyı yok say; `uv tool update-shell` çalıştırma ve kabuk dosyalarına dokunma. Ayarlarda tam yol kullanıldığı için gerekmez.
 3. **Çalıştırılabilir dosyaların yeri:** `<uv> tool dir --bin` (çoğunlukla `~/.local/bin`). Her sunucunun komutu bu klasördeki aynı adlı dosyadır, örneğin `~/.local/bin/yargi-mcp`. Ayarlarda **daima bu tam yolu** yaz; `~` yazma, açık yolu yaz. Masaüstü uygulamaları `~/.local/bin`'i PATH'te görmez.
 4. **Chromium** (planda evet dendiyse):
 
@@ -128,7 +133,7 @@ tar -xzf "<D>/paket.tar.gz" -C "<D>"
 - Antet 1. satırı Türkçe büyük harfle yazılır: i → İ, ı → I (`Işıl Çiçek` → `IŞIL ÇİÇEK`). Programlama dillerinin büyük harf işlevlerine güvenme.
 - Soyad dilekçenin her yerinde büyük harfle yazılır: `Av. Işıl ÇİÇEK`.
 - E-posta, KEP ve baro sicil numarası ayrı satırlardır. Kullanıcının istemediği satırı sil, istediğini örnekteki önekle yaz.
-- `[doldurun]` yalnızca kullanıcının vermediği zorunlu bilgide kalır; dilekçe yazılırken beceri onu sorar.
+- `[doldurun: ...]` yer tutucusu yalnızca kullanıcının vermediği zorunlu bilgide kalır; dilekçe yazılırken beceri onu sorar.
 - Bu bilgileri profil dosyası dışında hiçbir yere yazma ya da gönderme.
 
 ## 7. Becerileri kopyala
@@ -150,10 +155,10 @@ Kopyalanacak olan, `skills/<beceri-adı>/` klasörünün tamamıdır.
 - Zip'i önce geçici klasörde üret, sonra masaüstüne taşı:
 
   ```bash
-  cd "<D>/avukatlab-yapay-zeka-<sha>/skills" && zip -r -X "<D>/<beceri-adı>.zip" <beceri-adı> -x '*.DS_Store'
+  cd "<D>/avukatlab-yapay-zeka-<sha>/skills" && zip -r -X "<D>/<beceri-adı>.zip" <beceri-adı> -x '*.DS_Store' -x '*/.avukatlab-surum'
   ```
 
-- Masaüstünde aynı adlı bir zip varsa önce Çöp Kutusu'na taşı (9. adım). `zip` var olan arşive ekleme yapar ve eski dosyalar içinde kalır.
+- Masaüstünde aynı adlı bir zip varsa (planda gösterildi) önce Çöp Kutusu'na taşı (9. adım). Doğrudan masaüstünde zip üretme: `zip` var olan arşive ekleme yapar ve eski dosyalar içinde kalır.
 - `unzip -l` ile zip'in en üstünde `<beceri-adı>/SKILL.md` olduğunu kontrol et.
 - `.avukatlab-surum` zip'e konmaz.
 
@@ -185,15 +190,16 @@ Paragraf hedefte zaten varsa yeniden ekleme. Dosyayı değiştirmeden önce yede
 ## 9. Bitir
 
 1. **Geçici klasörü sil:** `rm -rf "<D>"`. İçinde doldurulmuş profil var.
-2. **Çöp Kutusu'na taşıma** (eski zip, kaldırma vb.): Mac'te `/usr/bin/trash <yol>` varsa onu kullan. Yoksa `mv <yol> ~/.Trash/`.
-3. **Son mesajda** kısa bir liste hâlinde şunları söyle:
+2. **Çöp Kutusu'na taşıma** (eski zip, kaldırma vb.): Mac'te `/usr/bin/trash <yol>` varsa onu kullan. Yoksa `mv -n <yol> ~/.Trash/`; Çöp Kutusu'nda aynı adlı dosya varsa ada tarih-saat ekle, var olanın üzerine yazma.
+3. **Claude Desktop'ı değiştirdiysen:** kullanıcı uygulamayı yeniden açtıktan sonra ayar dosyasında üç girdinin durduğunu kontrol et. Kaybolduysa (uygulama açıkken üzerine yazmış olabilir) yedekten değil, 4. adımdaki gibi yeniden ekle ve kullanıcıdan uygulamayı kapatıp açmasını iste.
+4. **Son mesajda** kısa bir liste hâlinde şunları söyle:
    - Neyin nereye kurulduğu ve yedeklerin yeri (`~/AvukatLab-yedekler/...`).
    - Asistan uygulamalarının tamamen kapatılıp yeniden açılması gerektiği.
    - Nasıl deneneceği:
      - Herhangi bir uygulamada: "Bir kira alacağı davası için kısa bir dava dilekçesi taslağı yaz".
      - Claude Code ve Antigravity'de beceri `/dilekce-yazimi` ile doğrudan da çağrılabilir.
    - Claude Desktop kurulduysa:
-     - Masaüstündeki zip'lerin ayarlardaki beceriler (Skills) bölümünden nasıl yükleneceği. Menü adları sürüme göre değişebilir. Becerilerin çalışması için kod çalıştırma özelliğinin açık olması gerekebilir.
+     - Masaüstündeki zip'lerin nasıl yükleneceği: Claude Desktop ayarlarında beceriler (Skills) bölümü, genellikle Settings › Capabilities altındadır. Menü adları sürüme göre değişebilir; bulamazsa uygulamanın yardım sayfasına baksın. Becerilerin çalışması için ayarlarda kod çalıştırma özelliğinin açık olması gerekebilir.
      - `dilekce-yazimi.zip` antet bilgilerini içerir ve Claude'un hizmetine yüklenir. Masaüstü bir bulut hizmetine eşitleniyorsa zip oraya da gider; yükledikten sonra zip'ler silinmeli.
      - Profil değişirse zip'in yeniden yapılıp yüklenmesi gerekir.
      - 8. adımdaki paragrafı nereye yapıştıracağı.
@@ -209,7 +215,7 @@ Kullanıcı "AvukatLab'i güncelle" derse hem sunucuları hem becerileri yenile.
 **MCP sunucuları:** Kurulu her sunucu için:
 
 ```bash
-UV_HTTP_TIMEOUT=180 <uv> tool install --reinstall --refresh <4. adımdaki adres>
+UV_HTTP_TIMEOUT=180 <uv> tool install --reinstall --refresh --managed-python --python 3.12 <4. adımdaki adres>
 ```
 
 Komut, sunucuyu son sürümle yeniden kurar. Yargı MCP'nin karar önbelleği bu sırada temizlenir; kararlar gerektikçe yeniden iner. Bitince asistan uygulamalarının yeniden başlatılması gerekir.
