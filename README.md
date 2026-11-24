@@ -22,7 +22,7 @@ https://github.com/hasankaracaoglan/avukatlab-yapay-zeka
 Adımlar depodaki KURULUM.md dosyasında.
 ```
 
-Asistan neleri kurmak istediğinizi sorar. Sonra antetiniz için adınızı, adresinizi ve telefonunuzu sorar. MCP sunucularını ve becerileri kurar, her komuttan önce izninizi ister. Bitince asistanı kapatıp açmanız yeterlidir.
+Asistan neleri kurmak istediğinizi ve antetiniz için adınızı, adresinizi, telefonunuzu sorar. Ne yapacağını bir plan olarak gösterir. Onaylayınca MCP sunucularını ve becerileri kurar. İlk kurulum, internet hızına göre 5-10 dakika sürer. Bitince asistanı kapatıp açmanız yeterlidir. Sunucular bilgisayarınıza kalıcı olarak kurulduğu için internet yokken de açılır.
 
 ### Elle kurulum
 
@@ -32,7 +32,7 @@ Asistan neleri kurmak istediğinizi sorar. Sonra antetiniz için adınızı, adr
    - **Claude Code:** `~/.claude/skills/`
    - **Antigravity:** genel beceri klasörü (yeni sürümlerde `~/.gemini/config/skills/`; bkz. [Antigravity belgeleri](https://antigravity.google/docs/skills))
    - **Claude Desktop:** her beceri klasörünü ayrı bir zip yapıp ayarlardaki beceriler (Skills) bölümünden yükleyin.
-4. MCP sunucularını kendi sayfalarındaki adımlarla kurun.
+4. MCP sunucularını kendi sayfalarındaki "Elle kurulum" adımlarıyla kurun. Sayfaların alt kısmındaki özgün projeye ait eski kurulum bölümlerini kullanmayın.
 
 ### Beceriler her zaman devrede olsun
 
@@ -46,8 +46,7 @@ Beceriyi elle de çağırabilirsiniz: `/dilekce-yazimi`.
 
 ## Güncelleme ve kaldırma
 
-- **MCP sunucuları** her açılışta GitHub'daki son sürümü kullanır.
-- **Beceriler** sizin kopyanızdır ve kendiliğinden güncellenmez; böylece değişiklikleriniz korunur. Yeni sürüm için asistana "AvukatLab becerilerini güncelle, benim değişikliklerimi koru" deyin.
+- Paket kendiliğinden güncellenmez. Yeni sürüm için asistana **"AvukatLab'i güncelle"** deyin. Asistan MCP sunucularını yeniden kurar. Beceriler sizin kopyanız olduğu için, sizin değişikliklerinizi koruyarak günceller ve neyin değiştiğini size gösterir.
 - **Kaldırmak** için beceri klasörlerini silin ve varsa "her zaman" paragrafını kural dosyanızdan çıkarın.
 
 ## Bilmeniz gerekenler

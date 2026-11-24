@@ -8,7 +8,9 @@ Bu dosyayı kendi bilgilerinizle doldurun. Kurulumu yapay zekâ asistanınıza y
 - **Antet 1. satır:** AVUKAT [doldurun: AD SOYAD]
 - **Antet 2. satır (adres):** [doldurun: Mahalle, cadde, no, ilçe/İL]
 - **Antet 3. satır (telefon):** [doldurun: ör. GSM: 0 5xx xxx xx xx]
-- **Antet 4. satır (isteğe bağlı: e-posta, KEP, baro sicil no):** [doldurun ya da bu satırı silin]
+- **Antet, isteğe bağlı e-posta satırı:** [doldurun: ör. E-posta: ad.soyad@ornek.com ya da bu satırı silin]
+- **Antet, isteğe bağlı KEP satırı:** [doldurun: ör. KEP: ad.soyad@hs01.kep.tr ya da bu satırı silin]
+- **Antet, isteğe bağlı baro sicil satırı:** [doldurun: ör. İzmir Barosu Sicil No: 00000 ya da bu satırı silin]
 
 ## Tercihler
 
