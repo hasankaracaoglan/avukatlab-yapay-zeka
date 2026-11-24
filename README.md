@@ -1,6 +1,6 @@
 # AvukatLab Yapay Zekâ Paketi
 
-Claude Code ya da Antigravity ile dilekçe yazan avukatlar için kural ve araç paketi:
+Claude Code, Codex ya da Antigravity ile dilekçe yazan avukatlar için kural ve araç paketi:
 
 - **Üç beceri (skill):** Asistan dilekçe yazarken bu kuralları uygular.
   - `dilekce-yazimi`: Emsal karar alıntısının harfi harfine olması, künye ve kaynak biçimi, cümle hâlinde madde başlıkları, ölçülü vurgu, sonuç ve istem.
@@ -12,11 +12,11 @@ Beceriler bir avukatın kendi dilekçe alışkanlıklarından derlendi. Hepsi d�
 
 ## Kurulum
 
-Paket Claude Code ve Antigravity içindir. Claude Desktop'ın sohbet bölümü ve diğer sohbet uygulamaları desteklenmez.
+Paket Claude Code, Codex (ChatGPT hesabıyla) ve Antigravity içindir. Claude Desktop'ın sohbet bölümü ve diğer sohbet uygulamaları desteklenmez.
 
 ### En kolay yol: asistanınıza kurdurun
 
-Claude Code ya da Antigravity'de sohbete şunu yapıştırın:
+Claude Code, Codex ya da Antigravity'de sohbete şunu yapıştırın:
 
 ```
 AvukatLab paketini benim için kur:
@@ -32,6 +32,7 @@ Asistan neleri kurmak istediğinizi ve antetiniz için adınızı, adresinizi, t
 2. `skills/dilekce-yazimi/profil.md` dosyasını kendi bilgilerinizle doldurun.
 3. İstediğiniz beceri klasörlerini kopyalayın:
    - **Claude Code:** `~/.claude/skills/`
+   - **Codex:** `~/.agents/skills/`
    - **Antigravity:** genel beceri klasörü (yeni sürümlerde `~/.gemini/config/skills/`; bkz. [Antigravity belgeleri](https://antigravity.google/docs/skills))
 4. MCP sunucularını kendi sayfalarındaki "Elle kurulum" adımlarıyla kurun. Sayfaların alt kısmındaki özgün projeye ait eski kurulum bölümlerini kullanmayın.
 
@@ -43,7 +44,7 @@ Asistan beceriyi işe göre kendisi seçer; dilekçe yazarken kaçırmasın iste
 Dilekçe, itiraz, istinaf, temyiz veya savunma yazarken `dilekce-yazimi` becerisini; dilekçe UDF'e ya da PDF'e çevrilirken `uyap-udf-sablonu` becerisini; emsal karar aranırken `ictihat-arastirmasi` becerisini kullan.
 ```
 
-Beceriyi elle de çağırabilirsiniz: `/dilekce-yazimi`.
+Beceriyi elle de çağırabilirsiniz: Claude Code ve Antigravity'de `/dilekce-yazimi`, Codex'te `$dilekce-yazimi`.
 
 ## Güncelleme ve kaldırma
 
@@ -54,7 +55,7 @@ Beceriyi elle de çağırabilirsiniz: `/dilekce-yazimi`.
 
 - **Sorumluluk:** Yapay zekâ yardımıyla yazılan dilekçenin içeriğinden ve doğruluğundan dilekçeyi imzalayan avukat sorumludur. Beceriler alıntının karar metniyle denetlenmesini zorunlu tutar, ama asistan yine de hata yapabilir. Göndermeden önce dilekçeyi baştan sona okuyun.
 - **Gizlilik:** Sohbette yazdıklarınızı kullandığınız yapay zekâ hizmeti işler; bunun için o hizmetin koşulları geçerlidir. Müvekkil bilgilerini yazmadan önce bunu göz önünde bulundurun. Beceriler, web ve karar aramalarına müvekkil adı ya da dosya numarası yazılmamasını şart koşar.
-- **Bağımsızlık:** Bu paket Adalet Bakanlığı, UYAP, HAVELSAN, Anthropic ya da Google ile bağlantılı değildir.
+- **Bağımsızlık:** Bu paket Adalet Bakanlığı, UYAP, HAVELSAN, Anthropic, OpenAI ya da Google ile bağlantılı değildir.
 
 ## Lisans
 

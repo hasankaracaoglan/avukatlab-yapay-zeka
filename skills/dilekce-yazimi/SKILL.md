@@ -7,10 +7,12 @@ description: Türk hukukunda dilekçe yazım kuralları. Dava, cevap, itiraz, is
 
 Bu beceri bir avukatın dilekçe yazım alışkanlıklarını toplar. Kendi tarzınıza uymayan maddeyi değiştirebilir ya da silebilirsiniz.
 
-## İşe başlamadan
+## İşe başlamadan (bu iki adımı atlama)
 
-- **Avukat bilgileri** (antet, vekil adı, imza) bu klasördeki `profil.md` dosyasındadır. Dosya yoksa ya da ilgili satırda `[doldurun: ...]` yer tutucusu kalmışsa bilgiyi kullanıcıya sor. Adres, telefon ya da baro bilgisi uydurma.
-- **UDF çıktısı:** Dilekçe UYAP Doküman Editörü dosyası (.udf) ya da PDF olarak üretilecekse `uyap-udf-sablonu` becerisini de uygula.
+1. **Profili oku.** Bu `SKILL.md` dosyasıyla aynı klasördeki `profil.md` dosyasını aç ve oku (ör. bu dosya `.../dilekce-yazimi/SKILL.md` ise profil `.../dilekce-yazimi/profil.md`'dir). Antet, vekil adı ve imza yalnızca oradan alınır.
+   - Dosya yoksa ya da ilgili satırda `[doldurun: ...]` yer tutucusu kalmışsa o bilgiyi kullanıcıya sor; sorana kadar yer tutucu bırak.
+   - Avukat adı, büro adı, adres, telefon ya da baro bilgisi uydurma. Klasör, dosya ya da kullanıcı adlarından da tahmin etme.
+2. **Şablonu oku.** Dilekçeler sonunda UYAP'a yüklendiği için, kullanıcı UDF istemese de metni `uyap-udf-sablonu` becerisindeki biçimle yaz: `@|` antet, `#|` mahkeme başlığı, TAB'la hizalı künye, `||` imza. O beceri kurulu değilse kullanıcıya söyle ve düz metinle yaz.
 - **Emsal karar ve mevzuat:** Esasa ilişkin her dilekçede, kullanıcının istemesini beklemeden emsal karar ve mevzuat kullanılır. Araştırma için `ictihat-arastirmasi` becerisini uygula. Yargı MCP ve Mevzuat MCP kurulu değilse karar alıntısı yapma; bunu kullanıcıya bildir ve dilekçeyi alıntısız yaz.
 - **Gizlilik:** Web aramasına ve karar arama sorgularına müvekkil adı, dosya numarası ya da kişileri ve olayı tanıtacak ayrıntı yazılmaz. Yalnızca hukuki terimler aranır.
 
