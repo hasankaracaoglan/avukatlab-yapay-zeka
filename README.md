@@ -1,6 +1,6 @@
 # AvukatLab Yapay Zekâ Paketi
 
-Claude, Antigravity gibi yapay zekâ asistanlarıyla dilekçe yazan avukatlar için kural ve araç paketi:
+Claude Code ya da Antigravity ile dilekçe yazan avukatlar için kural ve araç paketi:
 
 - **Üç beceri (skill):** Asistan dilekçe yazarken bu kuralları uygular.
   - `dilekce-yazimi`: Emsal karar alıntısının harfi harfine olması, künye ve kaynak biçimi, cümle hâlinde madde başlıkları, ölçülü vurgu, sonuç ve istem.
@@ -12,9 +12,11 @@ Beceriler bir avukatın kendi dilekçe alışkanlıklarından derlendi. Hepsi d�
 
 ## Kurulum
 
+Paket Claude Code ve Antigravity içindir. Claude Desktop'ın sohbet bölümü ve diğer sohbet uygulamaları desteklenmez.
+
 ### En kolay yol: asistanınıza kurdurun
 
-Claude Code ya da Antigravity gibi bilgisayarınızda komut çalıştırabilen bir asistan kullanıyorsanız, sohbete şunu yapıştırın:
+Claude Code ya da Antigravity'de sohbete şunu yapıştırın:
 
 ```
 AvukatLab paketini benim için kur:
@@ -31,7 +33,6 @@ Asistan neleri kurmak istediğinizi ve antetiniz için adınızı, adresinizi, t
 3. İstediğiniz beceri klasörlerini kopyalayın:
    - **Claude Code:** `~/.claude/skills/`
    - **Antigravity:** genel beceri klasörü (yeni sürümlerde `~/.gemini/config/skills/`; bkz. [Antigravity belgeleri](https://antigravity.google/docs/skills))
-   - **Claude Desktop:** her beceri klasörünü ayrı bir zip yapıp ayarlardaki beceriler (Skills) bölümünden yükleyin.
 4. MCP sunucularını kendi sayfalarındaki "Elle kurulum" adımlarıyla kurun. Sayfaların alt kısmındaki özgün projeye ait eski kurulum bölümlerini kullanmayın.
 
 ### Beceriler her zaman devrede olsun
